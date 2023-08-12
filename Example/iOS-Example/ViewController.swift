@@ -30,7 +30,7 @@ class TestViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [testObjectToLeak] in
             _ = testObjectToLeak
         }
-        checkLeak(of: testObjectToLeak) // the object is being held by closure at the time of check
+        checkLeak(of: testObjectToLeak, expectedDeallocationInterval: 2) // the object is being held by closure at the time of the check
     }
 
     override func viewDidLoad() {
