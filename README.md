@@ -15,7 +15,7 @@ it, simply add the following line to your Podfile:
 pod 'LeakChecker'
 ```
 
-For systems without UIKit (tvOS, macOS) you can use core functionality with your own UI or just console logging or `LeakDetectedBehavior.stop`:
+For systems without UIKit (tvOS, macOS) you can use core functionality with your own UI or just console logging:
  
 ```ruby
 pod 'LeakChecker', :subspecs => ['Core']
@@ -26,6 +26,16 @@ pod 'LeakChecker', :subspecs => ['Core']
 1. Activate `LeakChecker.isEnabled = true` (eg from `AppDelegate.init`)
 2. Use built-in handler `DefaultLeakDetectedHandler.isEnabled = true` or handle notification `NSNotification.Name.LeakChecker.leakDetected` by yourself
 3. Add calls `checkLeak(of:)` for all objects may be accidentially retained before their expected deallocation
+
+```swift
+class YourViewController: UIViewController {
+
+    private var viewModel = ViewModel()
+
+    deinit {
+        checkLeak(of: viewModel)
+    }
+```
 
 ## Author
 
