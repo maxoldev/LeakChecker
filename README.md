@@ -1,3 +1,5 @@
+<p align="center"><img src="icon.png" alt="icon" /></p>
+
 # LeakChecker
 
 Simple memory leak checker based on weak reference examination.
@@ -44,3 +46,5 @@ Max Sol, mswork85@gmail.com
 ## License
 
 LeakChecker is available under the MIT license. See the LICENSE file for more info.
+
+<a href="https://www.flaticon.com/free-icons/leak" title="leak icons">Leak icons created by Smashicons - Flaticon</a>
