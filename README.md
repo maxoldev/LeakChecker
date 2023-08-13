@@ -1,8 +1,10 @@
-<p align="center"><img src="icon.png" alt="icon" /></p>
+<p align="center"><img src="icon.png" alt="icon"/></p>
 
 # LeakChecker
 
 Simple memory leak checker based on weak reference examination.
+
+<img src="demo.gif" width=400 alt="screen record"/>
 
 ## Example
 
