@@ -43,7 +43,7 @@ class YourViewController: UIViewController {
 
 ## Author
 
-Max Sol, mswork85@gmail.com
+Max Sol, maxoldev@gmail.com
 
 ## License
 
