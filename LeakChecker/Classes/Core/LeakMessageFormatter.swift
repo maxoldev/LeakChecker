@@ -1,5 +1,4 @@
 //
-//  LeakMessageFormatter.swift
 //  LeakChecker
 //
 //  Created by Max Sol on 10.08.2023.
