@@ -19,34 +19,12 @@ Pod::Spec.new do |s|
   s.swift_versions = ['5']
 
   s.ios.deployment_target = '10.0'
-  s.osx.deployment_target = '10.13'
   s.tvos.deployment_target = '10.0'
+  s.osx.deployment_target = '10.13'
   s.watchos.deployment_target = '3.0'
 
-  s.default_subspec = "UI"
-
-  s.subspec 'Core' do |subspec|
-    subspec.ios.deployment_target = '10.0'
-    subspec.osx.deployment_target = '10.13'
-    subspec.tvos.deployment_target = '10.0'
-    subspec.watchos.deployment_target = '3.0'
-
-    subspec.source_files = 'LeakChecker/Classes/Core/**/*'
-  end
-
-  s.subspec 'Utils' do |subspec|
-    subspec.ios.deployment_target = '10.0'
-    subspec.tvos.deployment_target = '10.0'
-
-    subspec.source_files = 'LeakChecker/Classes/Utils/**/*'
-  end
-
-  s.subspec 'UI' do |subspec|
-    subspec.ios.deployment_target = '10.0'
-    subspec.tvos.deployment_target = '10.0'
-
-    subspec.source_files = 'LeakChecker/Classes/UI/**/*'
-    subspec.dependency "LeakChecker/Core"
-    subspec.dependency "LeakChecker/Utils"
-  end
+  s.ios.source_files = 'LeakChecker/Classes/Core/**/*', 'LeakChecker/Classes/Utils/**/*', 'LeakChecker/Classes/UIKit-Utils/**/*', 'LeakChecker/Classes/UIKit-UI/**/*'
+  s.tvos.source_files = 'LeakChecker/Classes/Core/**/*', 'LeakChecker/Classes/Utils/**/*', 'LeakChecker/Classes/UIKit-Utils/**/*', 'LeakChecker/Classes/UIKit-UI/**/*'
+  s.osx.source_files = 'LeakChecker/Classes/Core/**/*'
+  s.watchos.source_files = 'LeakChecker/Classes/Core/**/*'
 end

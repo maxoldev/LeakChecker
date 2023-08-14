@@ -15,5 +15,5 @@ end
 target 'macOS-Example' do
   platform :osx, '10.13'
 
-  pod 'LeakChecker', :path => '../', :subspecs => ['Core']
+  pod 'LeakChecker', :path => '../'
 end
