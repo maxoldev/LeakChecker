@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   Memory leak checker based on weak reference examination.
   DESC
 
-  s.homepage         = 'https://github.com/maxol85/LeakChecker'
+  s.homepage         = 'https://github.com/maxoldev/LeakChecker'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Max Sol' => 'maxoldev@gmail.com' }
   s.source           = { :git => 'https://github.com/maxoldev/LeakChecker.git', :tag => s.version.to_s }
