@@ -12,13 +12,11 @@ Pod::Spec.new do |s|
   s.author           = { 'Max Sol' => 'maxoldev@gmail.com' }
   s.source           = { :git => 'https://github.com/maxoldev/LeakChecker.git', :tag => s.version.to_s }
 
-  # s.source_files = 'LeakChecker/Classes/**/*'
-  
   s.resource_bundles = {
     'LeakChecker' => ['LeakChecker/Assets/**/*']
   }
 
-  s.swift_version = '5.0'
+  s.swift_versions = ['5']
 
   s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.13'
