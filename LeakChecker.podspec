@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/maxol85/LeakChecker'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Max Sol' => 'mswork85@gmail.com' }
-  s.source           = { :git => 'https://github.com/maxol85/LeakChecker.git', :tag => s.version.to_s }
+  s.author           = { 'Max Sol' => 'maxoldev@gmail.com' }
+  s.source           = { :git => 'https://github.com/maxoldev/LeakChecker.git', :tag => s.version.to_s }
 
   # s.source_files = 'LeakChecker/Classes/**/*'
   
