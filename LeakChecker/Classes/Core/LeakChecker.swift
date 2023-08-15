@@ -30,7 +30,7 @@ public final class LeakChecker: NSObject {
 
     // MARK: - Private
     private static var _detectedLeaks = [DetectedLeak]()
-    private static var queue = DispatchQueue(label: "LeakChecker.queue", attributes: .concurrent)
+    private static var queue = DispatchQueue(label: "maxoldev.LeakChecker.queue", attributes: .concurrent)
 
     // MARK: - Public
     public final class DetectedLeak: NSObject {
