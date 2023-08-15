@@ -28,8 +28,8 @@ final class OverlayToast: UIView {
         $0.setImage(icon.withRenderingMode(.alwaysTemplate), for: .normal)
     }
 
-    var onTapBlock: () -> Void = {}
-    var onHideBlock: () -> Void = {}
+    var onTapBlock: (() -> Void)?
+    var onHideBlock: (() -> Void)?
 
     func show(withAttributedText text: NSAttributedString) {
         layer.removeAllAnimations() // stop existing animations if needed
@@ -49,7 +49,7 @@ final class OverlayToast: UIView {
             }, completion: { _ in
                 self.isHidden = true
 
-                self.onHideBlock()
+                self.onHideBlock?()
             }
         )
     }
@@ -91,7 +91,7 @@ final class OverlayToast: UIView {
 
     @objc
     private func onTap() {
-        onTapBlock()
+        onTapBlock?()
     }
 
     @objc

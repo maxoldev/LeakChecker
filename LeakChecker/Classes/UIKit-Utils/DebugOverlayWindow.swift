@@ -54,6 +54,16 @@ public final class DebugOverlayWindow: UIWindow {
     }
 
     // MARK: - Public
+    public var onHideBlock: (() -> Void)?
+
+    @available(iOS 13.0, tvOS 13.0, *)
+    public init(windowScene: UIWindowScene, items: [DebugPanelsListItem] = [], openOnShake: Bool = false) {
+        self.items = items
+        super.init(windowScene: windowScene)
+
+        commonInit(openOnShake: openOnShake)
+    }
+
     public init(items: [DebugPanelsListItem] = [], openOnShake: Bool = false) {
         self.items = items
         super.init(frame: UIScreen.main.bounds)
@@ -89,7 +99,7 @@ public final class DebugOverlayWindow: UIWindow {
     private func commonInit(openOnShake: Bool) {
         backgroundColor = UIColor.clear
         isHidden = true
-        windowLevel = UIWindow.Level(10000)//greatestFiniteMagnitude//(rawValue: CGFloat.greatestFiniteMagnitude) // the topest view
+        windowLevel = UIWindow.Level(10000)// the topest view
 
         if openOnShake {
             NotificationCenter.default.addObserver(
@@ -116,6 +126,7 @@ public final class DebugOverlayWindow: UIWindow {
 
     private func hideWindow() {
         isHidden = true
+        onHideBlock?()
     }
 
     private var isViewControllerAdded: Bool {
