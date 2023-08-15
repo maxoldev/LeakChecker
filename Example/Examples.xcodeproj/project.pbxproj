@@ -16,11 +16,11 @@
 		502D51482A853078006FBDAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D51472A853078006FBDAA /* ViewController.swift */; };
 		502D514A2A853079006FBDAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502D51492A853079006FBDAA /* Assets.xcassets */; };
 		502D514D2A853079006FBDAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502D514B2A853079006FBDAA /* Main.storyboard */; };
-		502D51592A853083006FBDAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D51582A853083006FBDAA /* AppDelegate.swift */; };
-		502D515B2A853083006FBDAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D515A2A853083006FBDAA /* ViewController.swift */; };
 		502D515E2A853083006FBDAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502D515C2A853083006FBDAA /* Main.storyboard */; };
 		502D51602A853084006FBDAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502D515F2A853084006FBDAA /* Assets.xcassets */; };
 		502D51632A853084006FBDAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502D51612A853084006FBDAA /* LaunchScreen.storyboard */; };
+		50BB4DC92A8B89DE008A7769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB4DC72A8B89DE008A7769 /* AppDelegate.swift */; };
+		50BB4DCA2A8B89DE008A7769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB4DC82A8B89DE008A7769 /* ViewController.swift */; };
 		E5961105DA584C0197817255 /* libPods-macOS-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F6B7518C70CF20287EF87A /* libPods-macOS-Example.a */; };
 		F42116225B1F16B3E254A250 /* libPods-tvOS-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7FD1F7EDC42AFA41B0BE08 /* libPods-tvOS-Example.a */; };
 /* End PBXBuildFile section */
@@ -41,11 +41,11 @@
 		502D514C2A853079006FBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		502D514E2A853079006FBDAA /* macOS_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS_Example.entitlements; sourceTree = "<group>"; };
 		502D51562A853083006FBDAA /* tvOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		502D51582A853083006FBDAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		502D515A2A853083006FBDAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		502D515D2A853083006FBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		502D515F2A853084006FBDAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		502D51622A853084006FBDAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50BB4DC72A8B89DE008A7769 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "iOS-Example/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		50BB4DC82A8B89DE008A7769 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "iOS-Example/ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		676B4C5A495B9234D23CA6BC /* Pods-iOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Example.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Example/Pods-iOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		75FED90DD07558E3F001B525 /* Pods-tvos-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvos-example.release.xcconfig"; path = "Target Support Files/Pods-tvos-example/Pods-tvos-example.release.xcconfig"; sourceTree = "<group>"; };
 		7CE77EBBA219F7B1912DE05D /* libPods-iOS-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,8 +157,8 @@
 		502D51572A853083006FBDAA /* tvOS-Example */ = {
 			isa = PBXGroup;
 			children = (
-				502D51582A853083006FBDAA /* AppDelegate.swift */,
-				502D515A2A853083006FBDAA /* ViewController.swift */,
+				50BB4DC72A8B89DE008A7769 /* AppDelegate.swift */,
+				50BB4DC82A8B89DE008A7769 /* ViewController.swift */,
 				502D515C2A853083006FBDAA /* Main.storyboard */,
 				502D515F2A853084006FBDAA /* Assets.xcassets */,
 				502D51612A853084006FBDAA /* LaunchScreen.storyboard */,
@@ -254,6 +254,7 @@
 					};
 					502D51552A853083006FBDAA = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -451,8 +452,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				502D515B2A853083006FBDAA /* ViewController.swift in Sources */,
-				502D51592A853083006FBDAA /* AppDelegate.swift in Sources */,
+				50BB4DCA2A8B89DE008A7769 /* ViewController.swift in Sources */,
+				50BB4DC92A8B89DE008A7769 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
