@@ -28,18 +28,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func activateLeakChecker() {
+        // Just enable the checker
         LeakChecker.isEnabled = true
 
         // Use built-in handler...
-        DefaultLeakDetectedHandler.isEnabled = true
+        DefaultLeakDetectedHandler.shared.isEnabled = true
+        // You can override DefaultLeakDetectedHandler's leak detected behavior from code
+        // Value from env var `MAXOLDEV_LEAK_DETECTED_BEHAVIOR` or `.toast` is used by default 
+        // DefaultLeakDetectedHandler.shared.leakDetectedBehavior = .alert
 
         // ...or handle notification by yourself
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(onLeakDetected),
-            name: NSNotification.Name.LeakChecker.leakDetected,
-            object: nil
-        )
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(onLeakDetected),
+//            name: NSNotification.Name.LeakChecker.leakDetected,
+//            object: nil
+//        )
     }
 
     @objc
@@ -48,8 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let leakWarningString = LeakMessageFormatter.string(forLeak: leak)
         // log warning, using print or or_log or send to server
-        //print("🚰 " + leakWarningString)
-        _ = leakWarningString
+        print("🚰 " + leakWarningString)
     }
 
 }

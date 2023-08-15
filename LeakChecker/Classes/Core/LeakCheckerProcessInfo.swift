@@ -8,6 +8,6 @@ import Foundation
 
 enum LeakCheckerProcessInfo {
 
-    static let leakDetectedBehavior = ProcessInfo.processInfo.environment["LEAK_CHECKER_LEAK_DETECTED_BEHAVIOR"]
+    static let leakDetectedBehavior = ProcessInfo.processInfo.environment["MAXOLDEV_LEAK_DETECTED_BEHAVIOR"]
 
 }

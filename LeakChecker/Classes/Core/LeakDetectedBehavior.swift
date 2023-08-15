@@ -12,15 +12,12 @@ public enum LeakDetectedBehavior: String {
 
 extension LeakDetectedBehavior {
 
-    public static func fromEnvironment() -> LeakDetectedBehavior {
-        guard let behaviorString = LeakCheckerProcessInfo.leakDetectedBehavior else {
-            return .toast
-        }
-        if behaviorString.isEmpty {
-            return .ignore
-        }
-        guard let behavior = LeakDetectedBehavior(rawValue: behaviorString) else {
-            return .toast
+    public static func fromEnvironment() -> LeakDetectedBehavior? {
+        guard let behaviorString = LeakCheckerProcessInfo.leakDetectedBehavior,
+              !behaviorString.isEmpty,
+              let behavior = LeakDetectedBehavior(rawValue: behaviorString)
+        else {
+            return nil
         }
         return behavior
     }
