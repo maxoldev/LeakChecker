@@ -19,12 +19,6 @@ it, simply add the following line to your Podfile:
 pod 'LeakChecker'
 ```
 
-For systems without UIKit (tvOS, macOS) you can use core functionality with your own UI or just console logging:
- 
-```ruby
-pod 'LeakChecker', :subspecs => ['Core']
-``` 
-
 ## Usage
 
 1. Activate `LeakChecker.isEnabled = true` (eg from `AppDelegate.init`)
