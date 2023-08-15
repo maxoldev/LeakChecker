@@ -57,7 +57,7 @@ extension UIView {
     }
 
     private func pin<T>(_ anchor1: NSLayoutAnchor<T>, to anchor2: NSLayoutAnchor<T>, constant: CGFloat?) -> NSLayoutConstraint? {
-        guard let constant = constant else { return nil }
+        guard let constant else { return nil }
         
         let constraint = anchor1.constraint(equalTo: anchor2, constant: constant)
         constraint.isActive = true
