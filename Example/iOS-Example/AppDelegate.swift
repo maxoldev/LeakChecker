@@ -1,5 +1,4 @@
 //
-//  AppDelegate.swift
 //  LeakChecker
 //
 //  Created by Max Sol on 08/05/2023.

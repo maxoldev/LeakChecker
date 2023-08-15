@@ -1,5 +1,4 @@
 //
-//  ViewController.swift
 //  macOS-Example
 //
 //  Created by Max Sol on 10.08.2023.
