@@ -7,7 +7,7 @@
 import UIKit
 import LeakChecker
 
-class ViewModel {
+class ChildViewModel {
 
     private var block: (() -> Void)?
 
@@ -19,13 +19,15 @@ class ViewModel {
 
 }
 
-class TestViewController: UIViewController {
+class ChildViewController: UIViewController {
 
     private var testObjectToLeak = NSObject()
-    private var viewModel = ViewModel()
+    private var viewModel = ChildViewModel()
 
     deinit {
-        checkLeak(of: viewModel)
+        checkLeak(of: viewModel) // a leak will be detected due to intentional retain cycle
+
+        // hold the object for 5 sec.
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [testObjectToLeak] in
             _ = testObjectToLeak
         }
@@ -43,18 +45,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-
-        let pushButton = UIButton()
-        pushButton.translatesAutoresizingMaskIntoConstraints = false
-        pushButton.setTitle("🚰 Force memory leaks", for: .normal)
-        pushButton.addTarget(self, action: #selector(onForceMemoryLeaks), for: .primaryActionTriggered)
-        view.addSubview(pushButton)
-
-        NSLayoutConstraint.activate([
-            pushButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pushButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        setupUI()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +55,7 @@ class ViewController: UIViewController {
 
     @objc
     private func onForceMemoryLeaks() {
-        let vc = TestViewController()
+        let vc = ChildViewController()
         addChild(vc)
         view.addSubview(vc.view)
         vc.didMove(toParent: self)
@@ -78,4 +69,22 @@ class ViewController: UIViewController {
         }
     }
 
+}
+
+extension ViewController {
+
+    private func setupUI() {
+        view.backgroundColor = .blue
+
+        let pushButton = UIButton()
+        pushButton.translatesAutoresizingMaskIntoConstraints = false
+        pushButton.setTitle("🚰 Force memory leaks", for: .normal)
+        pushButton.addTarget(self, action: #selector(onForceMemoryLeaks), for: .primaryActionTriggered)
+        view.addSubview(pushButton)
+
+        NSLayoutConstraint.activate([
+            pushButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pushButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
 }
