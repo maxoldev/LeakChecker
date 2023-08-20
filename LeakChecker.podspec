@@ -1,11 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'LeakChecker'
   s.version          = '1.0.0'
-  s.summary          = 'Simple memory leak checker'
-
-  s.description      = <<-DESC
-  Memory leak checker based on weak reference examination.
-  DESC
+  s.summary          = 'Memory leak checker based on weak reference examination.'
 
   s.homepage         = 'https://github.com/maxoldev/LeakChecker'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
